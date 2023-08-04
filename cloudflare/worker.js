@@ -1,6 +1,7 @@
 // 同查找 _U 一样, 查找 KievRPSSecAuth、_RwBf 的值并替换下方的xxx
 const KievRPSSecAuth = 'xxx';
 const _RwBf = 'xxx';
+const _U = 'xxx';
 const SYDNEY_ORIGIN = 'https://sydney.bing.com';
 const BING_ORIGIN = 'https://www.bing.com';
 const KEEP_REQ_HEADERS = [
@@ -149,6 +150,9 @@ export default {
     }
     if (!cookie.includes('_RwBf=')) {
       cookies += '; _RwBf=' + _RwBf
+    }
+    if (!cookie.includes('_U=')) {
+      cookies += '; _U=' + _U
     }
     newHeaders.set('Cookie', cookies);
     const oldUA = request.headers.get('user-agent');
